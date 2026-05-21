@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="theme-color" content="#1F4D32">
+<title>Vitamix — خلطة القوة والصحة</title>
+<meta name="description" content="Vitamix - وجبات صحية طازجة، طبيعية 100%، محضرة بأيدي فريق متحمس">
+
+<!-- Open Graph for nice link previews when shared -->
+<meta property="og:title" content="Vitamix — خلطة القوة والصحة">
+<meta property="og:description" content="وجبتك الصحية الطازجة في كوب واحد — طبيعي 100%">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #FAF5E6;
+  --cream-dark: #F0E6CC;
+  --green: #1F4D32;
+  --green-mid: #2D6A47;
+  --green-light: #95D5A8;
+  --green-pale: #E8F3EC;
+  --coral: #E07856;
+  --coral-dark: #C5613F;
+  --ink: #142519;
+  --ink-soft: #45554B;
+  --shadow-sm: 0 4px 14px -4px rgba(20, 37, 25, 0.12);
+  --shadow-md: 0 10px 30px -10px rgba(20, 37, 25, 0.18);
+  --shadow-lg: 0 20px 50px -15px rgba(20, 37, 25, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Tajawal', system-ui, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============== HERO ============== */
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 24px 22px 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 10%, rgba(149, 213, 168, 0.45) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(224, 120, 86, 0.18) 0%, transparent 65%),
+    var(--cream);
+  overflow: hidden;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(2px);
+}
+.hero::before {
+  top: 18%;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  background: var(--coral);
+  opacity: 0.15;
+  animation: drift 8s ease-in-out infinite;
+}
+.hero::after {
+  bottom: 28%;
+  right: -30px;
+  width: 60px;
+  height: 60px;
+  background: var(--green-light);
+  opacity: 0.4;
+  animation: drift 10s ease-in-out infinite reverse;
+}
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -15px); }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 1.45rem;
+  color: var(--green);
+  letter-spacing: -0.5px;
+  display: inline-flex;
+  align-items: baseline;
+}
+.logo .dot {
+  color: var(--coral);
+  font-size: 1.8rem;
+  line-height: 0;
+  margin-right: 2px;
+}
+
+.nav-tag {
+  font-size: 0.72rem;
+  background: var(--green);
+  color: var(--cream);
+  padding: 7px 13px;
+  border-radius: 100px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-emoji {
+  font-size: 4.5rem;
+  display: inline-block;
+  margin-bottom: 8px;
+  animation: float 4s ease-in-out infinite;
+  filter: drop-shadow(0 8px 20px rgba(31, 77, 50, 0.2));
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-14px) rotate(2deg); }
+}
+
+.hero-title {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 13vw, 4.5rem);
+  line-height: 1;
+  color: var(--green);
+  letter-spacing: -2px;
+  margin-bottom: 14px;
+}
+.hero-title .accent {
+  color: var(--coral);
+  position: relative;
+  display: inline-block;
+}
+.hero-title .accent::after {
+  content: '';
+  position: absolute;
+  bottom: 6%;
+  right: 0;
+  left: 0;
+  height: 8px;
+  background: var(--green-light);
+  z-index: -1;
+  opacity: 0.7;
+  border-radius: 4px;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin-bottom: 28px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-badges {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+.badge {
+  background: white;
+  border: 1.5px solid var(--cream-dark);
+  padding: 8px 14px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: var(--shadow-sm);
+}
+
+.scroll-cue {
+  text-align: center;
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+}
+.scroll-cue p {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.scroll-arrow {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: var(--green);
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+/* ============== SHARED SECTION STYLES ============== */
+section, .ing-section, .result-section {
+  padding: 70px 22px;
+  position: relative;
+}
+
+.section-chip {
+  display: inline-block;
+  background: var(--green-pale);
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 8vw, 2.6rem);
+  line-height: 1.15;
+  color: var(--green);
+  letter-spacing: -1px;
+  margin-bottom: 14px;
+}
+.section-title span {
+  color: var(--coral);
+  font-style: italic;
+}
+
+.section-desc {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+/* ============== STORY ============== */
+.story {
+  background: white;
+  border-top: 1px solid var(--cream-dark);
+  border-bottom: 1px solid var(--cream-dark);
+}
+.story-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 24px;
+}
+.story-card {
+  background: var(--cream);
+  border: 1.5px solid var(--cream-dark);
+  padding: 22px;
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.story-card:active {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.story-card h4 {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--green);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.story-card p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ============== INGREDIENTS ============== */
+.ing-section {
+  background: var(--cream);
+}
+.ing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.ing-card {
+  background: white;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 18px;
+  padding: 18px 8px;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+.ing-card:active {
+  transform: scale(0.96);
+  box-shadow: var(--shadow-sm);
+}
+.i-emoji {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.i-name {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--green);
+  margin-bottom: 2px;
+}
+.i-type {
+  font-size: 0.7rem;
+  color: var(--coral-dark);
+  font-weight: 600;
+}
+
+.ing-promise {
+  background: var(--green);
+  color: var(--cream);
+  border-radius: 22px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.ing-promise::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 140px;
+  height: 140px;
+  background: var(--green-mid);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.ing-promise .icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+.ing-promise p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  position: relative;
+  z-index: 1;
+}
+.ing-promise strong {
+  color: var(--green-light);
+  display: block;
+  margin-bottom: 4px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 1rem;
+}
+
+/* ============== HYGIENE ============== */
+.hygiene-steps {
+  display: grid;
+  gap: 12px;
+  margin-top: 24px;
+}
+.h-step {
+  background: white;
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 20px;
+  padding: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  transition: transform 0.15s ease;
+}
+.h-step:active { transform: translateX(-4px); }
+.h-step-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--green-pale);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+.h-step-text { flex: 1; }
+.h-step-text h5 {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+.h-step-text p {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* ============== RESULT ============== */
+.result-section {
+  background: white;
+  text-align: center;
+}
+.result-emoji {
+  font-size: 3.5rem;
+  display: inline-block;
+  margin-bottom: 10px;
+  animation: float 5s ease-in-out infinite;
+}
+.result-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 32px;
+}
+.stat-box {
+  background: var(--cream);
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 20px;
+  padding: 24px 10px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at top right, var(--green-light) 0%, transparent 70%);
+  opacity: 0.4;
+  border-radius: 50%;
+}
+.s-num {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 1.85rem;
+  color: var(--coral);
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 1;
+}
+.s-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  line-height: 1.35;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============== CTA ============== */
+.cta-section {
+  background: var(--green);
+  color: var(--cream);
+  padding: 60px 22px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, var(--coral) 0%, transparent 70%);
+  opacity: 0.25;
+  border-radius: 50%;
+}
+.cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--green-light) 0%, transparent 70%);
+  opacity: 0.2;
+  border-radius: 50%;
+}
+.cta-section h3 {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.6rem, 7vw, 2.2rem);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.5px;
+}
+.cta-section p {
+  font-size: 0.98rem;
+  opacity: 0.9;
+  margin-bottom: 26px;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+}
+.cta-btn {
+  background: var(--coral);
+  color: white;
+  border: none;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 15px 36px;
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -8px rgba(224, 120, 86, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+.cta-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 5px 15px -5px rgba(224, 120, 86, 0.6);
+}
+
+/* ============== FOOTER ============== */
+.footer {
+  padding: 28px 22px;
+  background: var(--ink);
+  color: var(--cream);
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  opacity: 0.95;
+}
+.footer-brand {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: var(--green-light);
+}
+
+/* ============== RESPONSIVE ============== */
+@media (min-width: 640px) {
+  section, .ing-section, .result-section { padding: 90px 32px; }
+  .ing-grid { grid-template-columns: repeat(4, 1fr); }
+  .hero-title { letter-spacing: -3px; }
+}
+
+@media (min-width: 900px) {
+  .ing-grid {
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .story-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hygiene-steps {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .result-stats {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Scroll reveal */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::selection {
+  background: var(--coral);
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <nav class="nav">
+    <div class="logo">Vitamix<span class="dot">.</span></div>
+    <span class="nav-tag">🌿 طبيعي 100%</span>
+  </nav>
+
+  <div class="hero-content">
+    <div class="hero-emoji">🥤</div>
+    <h1 class="hero-title">خلطة <span class="accent">القوة</span><br>والصحة</h1>
+    <p class="hero-sub">وجبتك الصحية الطازجة في كوب واحد — محضرة بحب من فريق متحمس</p>
+
+    <div class="hero-badges">
+      <span class="badge">✨ بلا حافظات</span>
+      <span class="badge">🧊 طازج يومياً</span>
+      <span class="badge">💚 ثمن مناسب</span>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <p>اكتشف قصتنا</p>
+    <span class="scroll-arrow">↓</span>
+  </div>
+</section>
+
+<!-- ============== STORY ============== -->
+<section class="story">
+  <div class="section-chip reveal">📖 قصتنا</div>
+  <h2 class="section-title reveal">من شغف <span>صغير</span><br>لمشروع كبير</h2>
+  <p class="section-desc reveal">بدينا بفكرة بسيطة: نوصلو الصحة لكل واحد بثمن في المتناول — وها هي اليوم واقع.</p>
+
+  <div class="story-grid">
+    <div class="story-card reveal">
+      <h4>🌱 البداية</h4>
+      <p>كل شيء بدا بفكرة في رأس واحد — كيفاش نقدمو وجبة صحية طازجة بثمن مناسب للجميع.</p>
+    </div>
+    <div class="story-card reveal">
+      <h4>🤝 Vitamix وُلد</h4>
+      <p>فريق من 7 أشخاص متحمسين، كل واحد في منطقته — مستعدين يوصلو الصحة لكل زاوية.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============== INGREDIENTS ============== -->
+<div class="ing-section">
+  <div class="section-chip reveal">🌿 مكوناتنا</div>
+  <h2 class="section-title reveal">من <span>الطبيعة</span><br>لكوبك</h2>
+  <p class="section-desc reveal">كل مكون اخترناه بعناية — طازج، طبيعي، ومفيد للجسم والعقل.</p>
+
+  <div class="ing-grid">
+    <div class="ing-card reveal"><span class="i-emoji">🧘</span><div class="i-name">زبادي</div><div class="i-type">بروتين</div></div>
+    <div class="ing-card reveal"><span class="i-emoji">🌾</span><div class="i-name">شوفان</div><div class="i-type">طاقة</div></div>
+    <div class="ing-card reveal"><span class="i-emoji">🍓</span><div class="i-name">فراولة</div><div class="i-type">فيتامين</div></div>
+    <div class="ing-card reveal"><span class="i-emoji">🍌</span><div class="i-name">موز</div><div class="i-type">بوتاسيوم</div></div>
+    <div class="ing-card reveal"><span class="i-emoji">🍎</span><div class="i-name">تفاح</div><div class="i-type">فيتامين</div></div>
+    <div class="ing-card reveal"><span class="i-emoji">🌰</span><div class="i-name">لوز وجوز</div><div class="i-type">أوميغا 3</div></div>
+    <div class="ing-card reveal"><span class="i-emoji">🍇</span><div class="i-name">زبيب</div><div class="i-type">حديد</div></div>
+    <div class="ing-card reveal"><span class="i-emoji">🌴</span><div class="i-name">تمر</div><div class="i-type">طاقة طبيعية</div></div>
+    <div class="ing-card reveal"><span class="i-emoji">🌿</span><div class="i-name">برغل وأرز</div><div class="i-type">كارب صحي</div></div>
+  </div>
+
+  <div class="ing-promise reveal">
+    <span class="icon">✅</span>
+    <p><strong>لا مواد حافظة. لا ملونات.</strong>كل مكون طازج وطبيعي — نشريه ونحضرو بأيدينا يوميًا.</p>
+  </div>
+</div>
+
+<!-- ============== HYGIENE ============== -->
+<section>
+  <div class="section-chip reveal">🧼 نظافتنا</div>
+  <h2 class="section-title reveal">صحتك <span>مسؤوليتنا</span></h2>
+  <p class="section-desc reveal">ما كيكفيناش غير المكونات الطبيعية — الطريقة ديال التحضير والبيع خاصها تكون نظيفة مية فمية.</p>
+
+  <div class="hygiene-steps">
+    <div class="h-step reveal">
+      <div class="h-step-icon">🧤</div>
+      <div class="h-step-text">
+        <h5>لگات في كل وقت</h5>
+        <p>كل فرد فالفريق كيلبس لگات عند التحضير والبيع — لا تلامس مباشر مع المنتج أبداً.</p>
+      </div>
+    </div>
+    <div class="h-step reveal">
+      <div class="h-step-icon">🏠</div>
+      <div class="h-step-text">
+        <h5>فضاء تحضير معقم</h5>
+        <p>نحضرو في بيئة نظيفة ومعقمة — الأدوات والطاولات كلها تتنظف قبل كل دفعة.</p>
+      </div>
+    </div>
+    <div class="h-step reveal">
+      <div class="h-step-icon">🫙</div>
+      <div class="h-step-text">
+        <h5>تغليف محكم فوراً</h5>
+        <p>الكوب يتغلق مباشرة بعد التعبئة — الغطاء القبي يحمي المنتج من أي تلوث.</p>
+      </div>
+    </div>
+    <div class="h-step reveal">
+      <div class="h-step-icon">❄️</div>
+      <div class="h-step-text">
+        <h5>سلسلة تبريد مستمرة</h5>
+        <p>من التحضير حتى البيع، المنتج كيبقى مبرد بالثلج — ما كيوصلكش غير بارد وطازج.</p>
+      </div>
+    </div>
+    <div class="h-step reveal">
+      <div class="h-step-icon">👁️</div>
+      <div class="h-step-text">
+        <h5>مراقبة الجودة</h5>
+        <p>المنسق كيراجع كل دفعة قبل التوزيع — لا تسامح مع أي خلل في الجودة أو النظافة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== RESULT ============== -->
+<div class="result-section">
+  <span class="result-emoji">🏆</span>
+  <div class="section-chip reveal">النتيجة</div>
+  <h2 class="section-title reveal" style="text-align:center;">منتج <span>تفتخر</span> بيه</h2>
+  <p class="section-desc reveal" style="text-align:center; margin-left:auto; margin-right:auto;">الجمع بين المكونات الطبيعية + النظافة التامة + الفريق المتحمس = وجبة صحية تستاهل الثقة.</p>
+
+  <div class="result-stats">
+    <div class="stat-box reveal">
+      <div class="s-num">100%</div>
+      <div class="s-label">طبيعي بلا حافظات</div>
+    </div>
+    <div class="stat-box reveal">
+      <div class="s-num">7</div>
+      <div class="s-label">نقاط بيع ومناطق</div>
+    </div>
+    <div class="stat-box reveal">
+      <div class="s-num">5+</div>
+      <div class="s-label">مواد مغذية في كوب</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============== CTA ============== -->
+<div class="cta-section">
+  <h3>جرب Vitamix اليوم 🥗</h3>
+  <p>وجبتك الصحية الطازجة في انتظارك — بثمن في المتناول وجودة لا تقبل النقاش</p>
+  <button class="cta-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">اكتشف أكثر ↑</button>
+</div>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="footer-brand">Vitamix.</div>
+  <p>© 2025 — خلطة القوة والصحة</p>
+</footer>
+
+<script>
+  // Lightweight scroll reveal with stagger for grids
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const parent = entry.target.parentElement;
+        const isGrid = parent && (
+          parent.classList.contains('ing-grid') ||
+          parent.classList.contains('hygiene-steps') ||
+          parent.classList.contains('story-grid') ||
+          parent.classList.contains('result-stats')
+        );
+        const delay = isGrid ? Array.from(parent.children).indexOf(entry.target) * 60 : 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
